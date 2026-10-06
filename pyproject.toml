@@ -1,12 +1,16 @@
 [project]
-name = "chatterbox-tts"
-version = "0.1.6"
-description = "Chatterbox: Open Source TTS and Voice Conversion by Resemble AI"
+name = "chatterbox-light"
+version = "2.0.0"
+description = "Lightweight fork of Resemble AI's Chatterbox text-to-speech and voice conversion, with fewer dependencies and no watermarking"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
-    {name = "resemble-ai", email = "engineering@resemble.ai"}
+    {name = "Resemble AI"},
+]
+maintainers = [
+    {name = "Blair Chintella"},
 ]
 dependencies = [
     "numpy",
@@ -22,6 +26,7 @@ dependencies = [
     "soundfile",
     "tokenizers",
     "tqdm",
+    "huggingface-hub",
 ]
 
 [project.optional-dependencies]
@@ -33,9 +38,10 @@ multilingual = [
 [project.urls]
 Homepage = "https://github.com/BBC-Esq/chatterbox-light"
 Repository = "https://github.com/BBC-Esq/chatterbox-light"
+Upstream = "https://github.com/resemble-ai/chatterbox"
 
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77.0.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
