@@ -175,7 +175,7 @@ class ChatterboxTurboTTS:
 
         local_path = snapshot_download(
             repo_id=REPO_ID,
-            token=os.getenv("HF_TOKEN") or True,
+            token=os.getenv("HF_TOKEN") or None,
             allow_patterns=["*.safetensors", "*.json", "*.txt", "*.pt", "*.model"]
         )
 
