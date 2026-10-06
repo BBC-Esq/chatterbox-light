@@ -24,6 +24,12 @@ dependencies = [
     "tqdm",
 ]
 
+[project.optional-dependencies]
+multilingual = [
+    "pykakasi",
+    "spacy-pkuseg",
+]
+
 [project.urls]
 Homepage = "https://github.com/BBC-Esq/chatterbox-light"
 Repository = "https://github.com/BBC-Esq/chatterbox-light"

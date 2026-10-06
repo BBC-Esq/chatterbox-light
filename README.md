@@ -34,4 +34,9 @@ uv pip install -r requirements.txt
 pip install git+https://github.com/BBC-Esq/chatterbox-light.git --no-deps
 ```
 
+Optional: if you'll use the multilingual model with Japanese or Chinese text, also install these. Without them, Japanese kanji are dropped and Chinese text isn't split into words. The first time Chinese text is used, spacy-pkuseg downloads a ~35 MB model to `~/.pkuseg`.
+```
+uv pip install pykakasi spacy-pkuseg
+```
+
 Enjoy!
