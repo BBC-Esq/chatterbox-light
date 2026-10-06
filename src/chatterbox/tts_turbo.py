@@ -49,10 +49,10 @@ def punc_norm(text: str) -> str:
         ("—", "-"),
         ("–", "-"),
         (" ,", ","),
-        (""", "\""),
-        (""", "\""),
-        ("'", "'"),
-        ("'", "'"),
+        ("\u201c", "\""),
+        ("\u201d", "\""),
+        ("\u2018", "'"),
+        ("\u2019", "'"),
     ]
     for old_char_sequence, new_char in punc_to_replace:
         text = text.replace(old_char_sequence, new_char)
