@@ -17,6 +17,8 @@ def mel_basis(hp):
         sample_rate=hp.sample_rate,
         f_min=hp.fmin,
         f_max=hp.fmax,
+        norm="slaney",
+        mel_scale="slaney",  # match librosa.filters.mel, which the model was trained with
     ).T
     return fb.numpy()
 

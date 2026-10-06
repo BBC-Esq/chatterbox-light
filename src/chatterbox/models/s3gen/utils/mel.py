@@ -42,6 +42,8 @@ def mel_spectrogram(y, n_fft=1920, num_mels=80, sampling_rate=24000, hop_size=48
             sample_rate=sampling_rate,
             f_min=fmin,
             f_max=fmax,
+            norm="slaney",
+            mel_scale="slaney",  # match librosa.filters.mel, which the models were trained with
         ).T
         mel_basis[key] = fb.to(y.device)
         hann_window[str(y.device)] = torch.hann_window(win_size).to(y.device)

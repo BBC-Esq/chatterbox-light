@@ -36,6 +36,8 @@ class S3Tokenizer(S3TokenizerV2):
             sample_rate=S3_SR,
             f_min=0,
             f_max=S3_SR // 2,
+            norm="slaney",
+            mel_scale="slaney",  # match librosa.filters.mel, which the model was trained with
         ).T
         self.register_buffer(
             "_mel_filters",
