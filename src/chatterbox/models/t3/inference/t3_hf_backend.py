@@ -17,14 +17,12 @@ class T3HuggingfaceBackend(LlamaPreTrainedModel, GenerationMixin):
         speech_head,
         latents_queue=None,
         logits_queue=None,
-        alignment_stream_analyzer: 'AlignmentStreamAnalyzer'=None,
     ):
         super().__init__(config)
         self.model = llama
         self.speech_enc = speech_enc
         self.speech_head = speech_head
         self._added_cond = False
-        self.alignment_stream_analyzer = alignment_stream_analyzer
 
     @torch.inference_mode()
     def prepare_inputs_for_generation(
