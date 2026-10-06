@@ -181,7 +181,8 @@ class ChatterboxTurboTTS:
         local_path = snapshot_download(
             repo_id=NANO_REPO_ID if nano else REPO_ID,
             token=os.getenv("HF_TOKEN") or None,
-            allow_patterns=["*.safetensors", "*.json", "*.txt", "*.pt", "*.model"]
+            allow_patterns=["*.safetensors", "*.json", "*.txt", "*.pt", "*.model"],
+            ignore_patterns=["s3gen.safetensors"],  # only s3gen_meanflow.safetensors is loaded
         )
 
         return cls.from_local(local_path, device, nano=nano)
