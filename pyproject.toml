@@ -17,7 +17,7 @@ dependencies = [
     "torch",
     "torchaudio",
     "transformers>=4.46.0",
-    "diffusers",
+    "diffusers<1.0",
     "safetensors",
     "s3tokenizer",
     "einops",

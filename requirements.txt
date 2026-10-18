@@ -1,6 +1,6 @@
 s3tokenizer
 transformers
-diffusers
+diffusers<1.0
 safetensors
 pyloudnorm
 numpy
