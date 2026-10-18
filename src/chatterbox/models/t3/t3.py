@@ -395,13 +395,13 @@ class T3(nn.Module):
 
         logits_processors = LogitsProcessorList()
         if temperature > 0 and temperature != 1.0:
-            logits_processors.append(TemperatureLogitsWarper(temperature))
+            logits_processors.append(TemperatureLogitsWarper(float(temperature)))
         if top_k > 0:
-            logits_processors.append(TopKLogitsWarper(top_k))
+            logits_processors.append(TopKLogitsWarper(int(top_k)))
         if top_p < 1.0:
-            logits_processors.append(TopPLogitsWarper(top_p))
+            logits_processors.append(TopPLogitsWarper(float(top_p)))
         if repetition_penalty != 1.0:
-            logits_processors.append(RepetitionPenaltyLogitsProcessor(repetition_penalty))
+            logits_processors.append(RepetitionPenaltyLogitsProcessor(float(repetition_penalty)))
 
 
         speech_start_token = self.hp.start_speech_token * torch.ones_like(text_tokens[:, :1])
