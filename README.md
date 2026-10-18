@@ -24,7 +24,7 @@ python.exe -m pip install --upgrade pip
 pip install uv
 ```
 
-Next, make sure appropriate versions of torch, torchaudio, and CUDA are installed.
+Next, make sure appropriate versions of torch, torchaudio, and CUDA are installed. Use torch 2.6 or newer, because transformers 5.20 and later won't use older versions.
 
 ```
 uv pip install chatterbox-light
